@@ -3,7 +3,7 @@ var winston = require('winston');
 
 exports.update = function (commitInfo, sourceFolder, callback) {
     var name = commitInfo.repository.name;
-    var branch = commitInfo.ref.split('/').pop() === 'master' ? 'master' : 'dev';
+    var branch = commitInfo.ref.split('/').pop() === 'master' ? 'stable' : 'dev';
     // TODO: 用环境变量
     var docFolder = require('path').join('/', 'var', 'www', 'doc', name, branch);
     if (!fs.existsSync(docFolder)) {
