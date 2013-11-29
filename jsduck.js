@@ -13,6 +13,7 @@ exports.getConfig = function (repo, callback) {
         { encoding: 'utf8' },
         function (err, data) {
             if (err) {
+                winston.error('Failed to read "' + CONFIG_FILE_NAME + '": ' + err);
                 return callback(err);
             }
 

@@ -67,6 +67,9 @@ function generateDocument(repository, commitInfo, callback) {
                                 taskFolder,
                                 commitInfo,
                                 function (err) {
+                                    if (err) {
+                                        winston.error('Failed to generate local document: ' + err);
+                                    }
                                     winston.log('Remove temp task folder');
 
                                     fs.remove(
