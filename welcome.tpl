@@ -29,7 +29,7 @@
         <span class="meta-value">{{author}} ({{authorEmail}})</span>
     </p>
     <div id="author-card">
-        <div class="github-card" data-github="{{author}}" data-width="400" data-height="150"></div>
+        <div class="github-card" data-github="{{username}}" data-width="400" data-height="150"></div>
         <script src="http://lab.lepture.com/github-cards/widget.js"></script>
     </div>
 </section>

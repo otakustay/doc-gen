@@ -84,7 +84,8 @@ exports.getWelcomeHTML = function (repo, commitInfo, callback) {
                 sha: lastCommit.url.split('/').pop(),
                 url: lastCommit.url,
                 author: lastCommit.author.name,
-                authorEmail: lastCommit.author.email
+                authorEmail: lastCommit.author.email,
+                username: lastCommit.author.username
             };
             var html = require('mustache').render(data, templateData);
 
