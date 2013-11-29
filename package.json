@@ -1,0 +1,14 @@
+{
+    "name": "doc-gen",
+    "dependencies": {
+        "unzip": "*",
+        "fs-extra": "*",
+        "github": "*",
+        "temp": "*",
+        "mustache": "*",
+        "moment": "*",
+        "async": "*",
+        "connect": "*",
+        "winston": "*"
+    }
+}
