@@ -75,6 +75,7 @@ exports.getWelcomeHTML = function (repo, commitInfo, callback) {
 
             var lastCommit = commitInfo.commits[commitInfo.commits.length - 1];
             var templateData = {
+                owner: commitInfo.repository.owner.name,
                 name: commitInfo.repository.name,
                 updateTime: require('moment')(lastCommit.timestamp).format('YYYY-MM-DD HH:mm:ss'),
                 repoURL: commitInfo.repository.url,

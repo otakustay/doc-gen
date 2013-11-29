@@ -1,4 +1,8 @@
 <h1>{{name}}</h1>
+<section id="repo-card">
+    <div class="github-card" data-github="{{owner}}/{{name}}" data-width="400" data-height="150"></div>
+    <script src="http://lab.lepture.com/github-cards/widget.js"></script>
+</section>
 <section id="meta-data">
     <p>
         <span class="meta-name">更新时间</span>
@@ -22,6 +26,10 @@
     </p>
     <p>
         <span class="meta-name">最后提交者</span>
-        <span class="meta-value">{{author}}({{authorEmail}})</span>
+        <span class="meta-value">{{author}} ({{authorEmail}})</span>
     </p>
+    <div id="author-card">
+        <div class="github-card" data-github="{{author}}" data-width="400" data-height="150"></div>
+        <script src="http://lab.lepture.com/github-cards/widget.js"></script>
+    </div>
 </section>

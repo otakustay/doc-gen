@@ -41,7 +41,7 @@ function generateDocument(repository, commitInfo, callback) {
 
             var url = require('url').parse(data.meta.location);
             winston.info('Download zip file at "' + url.href + '"');
-            var request = require('https').get(
+            require('https').get(
                 {
                     hostname: url.hostname,
                     path: url.path,
@@ -133,7 +133,7 @@ function greet(request, response, next) {
 }
 
 var connect = require('connect');
-var app = connect()
+connect()
     .use(connect.bodyParser())
     .use(greet)
     .use(processGitHubCommit)
