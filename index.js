@@ -92,7 +92,16 @@ function processGitHubCommit(request, response) {
         return;
     }
 
+    response.writeHead(204);
+    response.end();
+
     commitInfo = JSON.parse(commitInfo);
+    
+    // 只处理head上的更新
+    if (commitInfo.ref.indexOf('heads') < 0) {
+        return;
+    }
+
     var repository = commitInfo.repository.name + '@' + commitInfo.ref.split('/').pop();
     winston.info('Received commit for ' + repository);
 
@@ -108,9 +117,6 @@ function processGitHubCommit(request, response) {
             winston.info('Task complete for ' + repository);
         }
     );
-
-    response.writeHead(204);
-    response.end();
 }
 
 var connect = require('connect');
