@@ -39,7 +39,7 @@ exports.updateConfig = function (repo, output, commitInfo, callback) {
 
                 config['--welcome'] = 'welcome.html';
                 config['--output'] = output;
-                winston.log('Write modified "config.json" for jsduck');
+                winston.info('Write modified "config.json" for jsduck');
                 var filename = path.join(repo, JSDUCK_DIR_NAME, CONFIG_FILE_NAME);
                 fs.writeFile(filename, JSON.stringify(config), done);
             }
@@ -104,7 +104,7 @@ exports.generate = function (repo, commitInfo, callback) {
                 return callback(err);
             }
 
-            winston.log('Run jsduck command at "' + repo + '"');
+            winston.info('Run jsduck command at "' + repo + '"');
             var jsduck = require('child_process').spawn(
                 'jsduck',
                 ['--config=jsduck/config.json'],
