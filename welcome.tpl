@@ -2,10 +2,9 @@
     #repo-card, #author-card {
         float: right;
         margin-right: 40px;
-        margin-top: -40px;
     }
     #author-card {
-        margin-top: -80px;
+        margin-top: -60px;
     }
 
     #meta-data {
