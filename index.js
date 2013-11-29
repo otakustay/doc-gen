@@ -122,9 +122,20 @@ function processGitHubCommit(request, response) {
     );
 }
 
+function greet(request, response, next) {
+    if (require('url').parse(request.url).pathname === '/hello') {
+        response.writeHead(200, { 'Content-Type': 'text/plain' });
+        response.end('OK');
+    }
+    else {
+        next();
+    }
+}
+
 var connect = require('connect');
 var app = connect()
     .use(connect.bodyParser())
+    .use(greet)
     .use(processGitHubCommit)
     .listen(PORT);
 
