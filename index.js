@@ -29,10 +29,10 @@ function generateDocument(repository, commitInfo, callback) {
     var github = new GitHubAPI({ version: '3.0.0' });
     github.repos.getArchiveLink(
         {
-            user: 'ecomfe',
-            repo: 'er',
+            user: commitInfo.repository.owner.name,
+            repo: commitInfo.repository.name,
             archive_format: 'zipball',
-            ref: '3.1.0-dev'
+            ref: commitInfo.ref.split('/').pop()
         },
         function (err, data) {
             if (err) {
@@ -76,7 +76,7 @@ function generateDocument(repository, commitInfo, callback) {
                                 }
                             );
                         }
-                    )
+                    );
                 }
             );
         }
